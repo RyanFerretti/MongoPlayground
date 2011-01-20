@@ -1,0 +1,31 @@
+<h1>Listing field_prototypes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Segment</th>
+    <th>Field type</th>
+    <th>Readonly</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @field_prototypes.each do |field_prototype| %>
+  <tr>
+    <td><%= field_prototype.name %></td>
+    <td><%= field_prototype.description %></td>
+    <td><%= field_prototype.segment %></td>
+    <td><%= field_prototype.field_type %></td>
+    <td><%= field_prototype.readonly %></td>
+    <td><%= link_to 'Show', field_prototype %></td>
+    <td><%= link_to 'Edit', edit_field_prototype_path(field_prototype) %></td>
+    <td><%= link_to 'Destroy', field_prototype, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Field prototype', new_field_prototype_path %>

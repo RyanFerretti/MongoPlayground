@@ -1,0 +1,2 @@
+module LoanDetailsHelper
+end

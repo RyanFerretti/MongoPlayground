@@ -1,0 +1,22 @@
+<h1>Listing loans</h1>
+
+<table>
+  <tr>
+    <th>Account number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loans.each do |loan| %>
+  <tr>
+    <td><%= loan.account_number %></td>
+    <td><%= link_to 'Show', loan.loan_detail %></td>
+    <td><%= link_to 'Destroy', loan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Loan', new_loan_path %>

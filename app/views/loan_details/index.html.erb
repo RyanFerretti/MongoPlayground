@@ -1,0 +1,18 @@
+<h1>Listing loan_details</h1>
+
+<table>
+  <tr>
+    <th>Loan #</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loan_details.each do |loan_detail| %>
+  <tr>
+    <td><%= loan_detail.loan.account_number %></td>
+    <td><%= link_to 'Show', loan_detail %></td>
+    <td><%= link_to 'Edit', edit_loan_detail_path(loan_detail) %></td>
+  </tr>
+<% end %>
+</table>

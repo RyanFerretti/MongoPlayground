@@ -1,0 +1,51 @@
+<%= form_for(@field_prototype) do |f| %>
+  <% if @field_prototype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@field_prototype.errors.count, "error") %> prohibited this field_prototype from being saved:</h2>
+
+      <ul>
+      <% @field_prototype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :field_type %><br />
+    <%= f.select :field_type, field_types, {}, :class => "type_select" %>
+    <%= text_field_tag :dd1, dd_text_field_values(0), :class => "dd_value" %>
+    <%= text_field_tag :dd2, dd_text_field_values(1), :class => "dd_value" %>
+    <%= text_field_tag :dd3, dd_text_field_values(2), :class => "dd_value" %>
+    <%= select_tag :op1, options_from_collection_for_select(all_prototype_number_fields, :id, :name, calc_select_values(0)), :class => "calc_select"%>
+    <%= select_tag :op2, options_for_select(operands, calc_select_values(1)), :class => "calc_select" %>
+    <%= select_tag :op3, options_from_collection_for_select(all_prototype_number_fields, :id, :name, calc_select_values(1)), :class => "calc_select"%>
+  </div>
+  <div class="field">
+    <%= f.label :segment %><br />
+    <%= f.select :segment, segments %>
+  </div>
+  <div class="field">
+    <%= f.label :readonly %><br />
+    <%= f.check_box :readonly %>
+  </div>
+  <div class="field">
+    <%= f.label :navable %><br />
+    <%= f.check_box :navable %>
+  </div>
+  <div class="field">
+    <%= f.label :napable %><br />
+    <%= f.check_box :napable %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

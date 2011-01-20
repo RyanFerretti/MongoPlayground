@@ -1,0 +1,26 @@
+<%= form_for @loan_detail do |f| %>
+  <% if @loan_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
+
+      <ul>
+      <% @loan_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+  <legend>Loan Fields</legend>
+    <% @loan_detail.loan_fields.each do |field| %>
+        <%= f.fields_for :loan_fields, field do |builder| %>
+            <%= render :partial => "loan_fields/form_field", :locals => {:builder => builder, :form_field => field} %>
+        <% end %>
+    <% end %>
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

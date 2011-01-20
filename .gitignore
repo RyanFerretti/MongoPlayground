@@ -1,0 +1,9 @@
+.idea/**/*
+config/database.yml
+config/mongoid.yml
+db/*.sqlite3
+log/*.log
+tmp/**/*
+test/tmp/**/*
+
+

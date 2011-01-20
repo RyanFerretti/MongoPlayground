@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @field_prototype.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @field_prototype.description %>
+</p>
+
+<p>
+  <b>Segment:</b>
+  <%= @field_prototype.segment %>
+</p>
+
+<p>
+  <b>Field type:</b>
+  <%= @field_prototype.field_type %>
+</p>
+
+<p>
+  <b>Readonly:</b>
+  <%= @field_prototype.readonly %>
+</p>
+
+<p>
+  <b>NAV-able:</b>
+  <%= @field_prototype.navable %>
+</p>
+
+<p>
+  <b>NAP-able:</b>
+  <%= @field_prototype.napable %>
+</p>
+
+<%= link_to 'Edit', edit_field_prototype_path(@field_prototype) %> |
+<%= link_to 'Back', field_prototypes_path %>
